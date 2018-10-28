@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 
 // connect to mLab database
-mongoose.connect('mongodb://gql-user:CCTpassword1!@ds141783.mlab.com:41783/gql-aspmvp');
+mongoose.connect('CONNECTION STRING HERE');
 mongoose.connection.once('open', () => {
     console.log('Connected to database');
 });
