@@ -19,42 +19,6 @@ const { // grab this object from package
     GraphQLNonNull
 } = graphQL;
 
-
-// // dummy data
-// var books = [{
-//     name: 'Name of the Wind',
-//     genre: 'Fantasy',
-//     id: '1',
-//     authorId: '1'
-// },
-// {
-//     name: 'The Final Empire',
-//     genre: 'Fantasy',
-//     id: '2',
-//     authorId: '2'
-// },
-// {
-//     name: 'The Long Earth',
-//     genre: 'Sci-Fi',
-//     id: '3',
-//     authorId: '3'
-// }
-// ];
-
-// var authors = [{
-//     name: 'Patrik dsds',
-//     age: 44,
-//     id: '1'
-// }, {
-//     name: '2323232  3232',
-//     age: 30,
-//     id: '2'
-// }, {
-//     name: '323232dsds jiuhjihji',
-//     age: 55,
-//     id: '3'
-// }];
-
 const AuthorType = new GraphQLObjectType({
     name: 'Author',
     /**
