@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const authorSchema = new Schema({
-    // id is created by default by mLab
+    /**
+     * No need to add "id" column
+     * It is being created by mLab as "_id"
+     */
     name: String,
     age: Number
 });

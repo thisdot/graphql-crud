@@ -1,6 +1,8 @@
 
 # Created by https://www.gitignore.io/api/node
 
+mLab-connection-string.js
+
 ### Node ###
 # Logs
 logs

@@ -1,28 +1,43 @@
-// require express
 const express = require('express');
+
+// Import GraphQL middleware
 const expressGraphQL = require('express-graphql');
-const schema = require('./schema/schema');
+
+// Import Mongo Db Client API
 const mongoose = require('mongoose');
+
+// Import CORs middleware to allow connections from another URL:PORT
 const cors = require('cors');
 
-// create an app instance by invoking express function
+// Import mLab connection string
+const cs = require('./mlab-connection-string');
+
+// Import GraphQL Schema used
+const schema = require('./schema/schema');
+
+// Create a new app based on Express
 const app = express();
 
-// allow cross origin requests
+// Allow cross origin requests
 app.use(cors());
 
-// connect to mLab database
-mongoose.connect('CONNECTION STRING HERE');
+// Connect to database
+mongoose.connect(
+  cs,
+  { useNewUrlParser: true }
+);
+
 mongoose.connection.once('open', () => {
     console.log('Connected to database');
 });
 
+// Configure and add the GraphQL middleware
 app.use('/graphql', expressGraphQL({
     schema, // how our data look like (our graph look like)
     graphiql: true
 }));
 
-// tell the app to listen to requests on port 4000 on this machine
+// Start listening for requests on PORT 4000 on this machine
 app.listen(4000, () => {
     console.log('Listening for requests on port 4000');
 }); 
