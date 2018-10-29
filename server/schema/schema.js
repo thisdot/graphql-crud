@@ -27,7 +27,7 @@ const AuthorType = new GraphQLObjectType({
   fields: () => ({
     // Fields exposed via query
     id: {
-      type: GraphQLString
+      type: GraphQLID
     },
     name: {
       type: GraphQLString
@@ -56,7 +56,7 @@ const BookType = new GraphQLObjectType({
   fields: () => ({
     // Fields exposed via query
     id: {
-      type: GraphQLString
+      type: GraphQLID
     },
     name: {
       type: GraphQLString
